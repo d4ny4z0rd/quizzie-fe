@@ -18,7 +18,6 @@ const Dashboard = () => {
 	const loadQuizzes = async () => {
 		try {
 			const data = await fetchQuizzes();
-			console.log(data);
 			setQuizzes(data.quizzes);
 			setNumberOfQuizzes(data.numberOfQuizzes);
 			setNumberOfQuestions(data.numberOfQuestions);
@@ -74,6 +73,9 @@ const Dashboard = () => {
 			return number;
 		}
 	};
+
+	// Filter quizzes with more than 10 impressions
+	const trendingQuizzes = quizzes.filter((quiz) => quiz.impressions > 10);
 
 	return (
 		<div className={styles.dashboardContainer}>
@@ -140,10 +142,10 @@ const Dashboard = () => {
 				<div className={styles.quizList}>
 					<h2>Trending Quizzes</h2>
 					<div className={styles.quizzesGrid}>
-						{quizzes.length === 0 ? (
-							<p>No quizzes found.</p>
+						{trendingQuizzes.length === 0 ? (
+							<p>No quiz of yours is trending right now...</p>
 						) : (
-							quizzes.map((quiz) => (
+							trendingQuizzes.map((quiz) => (
 								<div key={quiz._id} className={styles.quizCard}>
 									<div className={styles.quizTitleContainer}>
 										<h3
