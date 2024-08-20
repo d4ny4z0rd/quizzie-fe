@@ -64,6 +64,7 @@ const PlayQuiz = () => {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
+				Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
 			},
 			body: JSON.stringify({
 				quizId,
@@ -76,7 +77,6 @@ const PlayQuiz = () => {
 
 		setIsAnswerSubmitted(true);
 	};
-
 	const handleNextQuestion = (manual = true) => {
 		// Always proceed to the next question
 		setIsAnswerSubmitted(false);

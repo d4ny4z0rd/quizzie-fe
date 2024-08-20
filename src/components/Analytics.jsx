@@ -21,6 +21,9 @@ const Analytics = () => {
 				const response = await axios.get(
 					`https://quizzie-be.vercel.app/api/v1/quiz/getquizzes`,
 					{
+						headers: {
+							Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+						},
 						withCredentials: true,
 					}
 				);
@@ -58,6 +61,9 @@ const Analytics = () => {
 				await axios.delete(
 					`https://quizzie-be.vercel.app/api/v1/quiz/${quizIdToDelete}`,
 					{
+						headers: {
+							Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+						},
 						withCredentials: true,
 					}
 				);
@@ -71,7 +77,7 @@ const Analytics = () => {
 
 	const handleShare = async (quizId) => {
 		try {
-			const shareLink = `http://localhost:5173/playQuiz/${quizId}`;
+			const shareLink = `https://quizzie-fe.vercel.app/playQuiz/${quizId}`;
 			if (shareLink) {
 				navigator.clipboard.writeText(shareLink);
 				alert("Link copied to clipboard!");

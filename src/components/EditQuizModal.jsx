@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import styles from "./EditQuizModal.module.css"; 
+import styles from "./EditQuizModal.module.css";
 
 const EditQuizModal = ({ quizId, onClose }) => {
 	const [quiz, setQuiz] = useState(null);
@@ -8,7 +8,6 @@ const EditQuizModal = ({ quizId, onClose }) => {
 	const [error, setError] = useState(null);
 	const [selectedQuestionIndex, setSelectedQuestionIndex] = useState(0);
 
-	
 	const fetchQuizData = async () => {
 		try {
 			const response = await axios.get(
@@ -29,7 +28,8 @@ const EditQuizModal = ({ quizId, onClose }) => {
 
 	const handleUpdate = async () => {
 		try {
-			if (!quiz) return; 
+			if (!quiz) return;
+
 			const updatedQuiz = {
 				questions: quiz.questions.map((q) => ({
 					_id: q._id,
@@ -40,7 +40,7 @@ const EditQuizModal = ({ quizId, onClose }) => {
 				})),
 			};
 
-			const token = localStorage.getItem("accessToken"); 
+			const token = localStorage.getItem("accessToken");
 			await axios.put(
 				`https://quizzie-be.vercel.app/api/v1/quiz/updatequiz/${quizId}`,
 				updatedQuiz,
@@ -50,7 +50,7 @@ const EditQuizModal = ({ quizId, onClose }) => {
 					},
 				}
 			);
-			onClose(); 
+			onClose();
 		} catch (err) {
 			console.error("Error updating quiz", err);
 			setError("Error updating quiz");

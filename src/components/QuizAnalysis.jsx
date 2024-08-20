@@ -11,7 +11,7 @@ const QuizAnalysis = () => {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 	const [isPoll, setIsPoll] = useState(false);
-	const [quizData, setQuizData] = useState(null); 
+	const [quizData, setQuizData] = useState(null);
 	const navigate = useNavigate();
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -20,12 +20,16 @@ const QuizAnalysis = () => {
 			try {
 				const response = await axios.get(
 					`https://quizzie-be.vercel.app/api/v1/analytics/get/${quizId}`,
-					{ withCredentials: true }
+					{
+						headers: {
+							Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+						},
+					}
 				);
 				if (response.data && Array.isArray(response.data.analytics)) {
 					setQuestions(response.data.analytics);
 					setIsPoll(response.data.isPoll);
-					setQuizData(response.data.quizData); 
+					setQuizData(response.data.quizData);
 				} else {
 					throw new Error(
 						"Unexpected response structure or missing analytics data"

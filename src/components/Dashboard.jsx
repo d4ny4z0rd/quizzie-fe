@@ -36,14 +36,14 @@ const Dashboard = () => {
 		try {
 			await createQuiz(quizData);
 			setIsModalOpen(false);
-			loadQuizzes(); 
+			loadQuizzes();
 		} catch (error) {
 			console.error("Error creating quiz:", error.message);
 		}
 	};
 
 	const handleShareQuiz = (quizId) => {
-		const link = `http://localhost:5173/playquiz/${quizId}`;
+		const link = `https://quizzie-fe.vercel.app/playquiz/${quizId}`;
 		setShareLink(link);
 		setIsShareModalOpen(true);
 	};
