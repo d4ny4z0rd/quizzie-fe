@@ -155,7 +155,7 @@ const Dashboard = () => {
 										</h3>
 										<div className={styles.impressionsContainer}>
 											<img
-												src="src/assets/eye.svg"
+												src="fe/src/assets/eye.svg"
 												alt="Impressions"
 												className={styles.eyeIcon}
 											/>
