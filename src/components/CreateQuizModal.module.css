@@ -1,0 +1,86 @@
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: opacity 0.3s ease;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.open {
+	opacity: 1;
+	visibility: visible;
+}
+
+.modalContent {
+	background: white;
+	padding: 30px;
+	border-radius: 5px;
+	width: 80%;
+	max-width: 500px;
+}
+
+.quizTypeContainer {
+	display: flex;
+	justify-content: space-around;
+	margin: 10px 0;
+}
+
+.quizTypeButton {
+	background: #f0f0f0;
+	border: 1px solid #ddd;
+	padding: 20px 20px;
+	border-radius: 5px;
+	width: 30%;
+	height: 10%;
+	font-size: 20px;
+	cursor: pointer;
+	margin-top: 3%;
+}
+
+.quizTypeButton.selected {
+	background: lightgreen;
+	color: white;
+}
+
+.button {
+	background-color: lightgreen;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	margin: 10px 5px;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+	background-color: lightblue;
+}
+
+.button:active {
+	transform: scale(0.98);
+}
+
+.closeButton {
+	background-color: #dc3545;
+}
+
+.closeButton:hover {
+	background-color: #c82333;
+}
+
+
+.error {
+	color: red;
+	margin-top: 10px;
+	font-size: 14px;
+	text-align: center;
+}

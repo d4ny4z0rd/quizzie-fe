@@ -1,0 +1,124 @@
+.pageContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #f0f2f5;
+}
+
+.container {
+	width: 100%; 
+	max-width: 1000px; 
+	margin: auto;
+	padding: 150px;
+	background: #f5f5f5;
+	border-radius: 10px;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	text-align: center;
+}
+
+.newContainer {
+	max-width: 500px;
+	margin-left: 25%;
+	justify-content: center;
+}
+
+h2 {
+	font-size: 32px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	color: #333;
+}
+
+.formGroup {
+	margin-bottom: 20px;
+	text-align: left;
+}
+
+label {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 5px;
+	color: #333;
+}
+
+input {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+.inputError {
+	border-color: red;
+}
+
+.error {
+	color: red;
+	font-size: 12px;
+	margin-top: 5px;
+}
+
+.signupButton {
+	background-color: #7c5dc7;
+	color: white;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	width: 100%;
+	transition: background-color 0.3s ease;
+}
+
+.signupButton:hover {
+	background-color: #6a47b4;
+}
+
+button:disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
+}
+
+.toggleButton {
+	background: none;
+	border: none;
+	color: #7c5dc7;
+	font-size: 14px;
+	cursor: pointer;
+	margin-top: 20px;
+	text-decoration: underline;
+}
+
+.toggleButton:hover {
+	color: #6a47b4;
+}
+
+.buttonGroup {
+	display: flex;
+	justify-content: space-around;
+	margin: 20px 0;
+}
+
+.pageButton {
+	background: none;
+	border: none;
+	color: #7c5dc7;
+	font-size: 16px;
+	cursor: pointer;
+	text-decoration: none;
+	padding: 10px;
+	border-radius: 5px;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pageButton:hover {
+	background-color: #e0e0e0;
+}
+
+.active {
+	background-color: #7c5dc7;
+	color: white;
+}

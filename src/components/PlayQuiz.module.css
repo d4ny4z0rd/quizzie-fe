@@ -1,0 +1,93 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px;
+	max-width: 800px;
+	margin: auto;
+}
+
+.timer {
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	color: #ff0000;
+}
+
+.questionContainer {
+	width: 100%;
+	text-align: center;
+}
+
+.questionTitle {
+	font-size: 22px;
+	margin-bottom: 10px;
+	color: #333;
+}
+
+.questionText {
+	font-size: 20px;
+	margin-bottom: 20px;
+	color: #444;
+}
+
+.optionsContainer {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); 
+	gap: 10px; 
+	width: 100%;
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.optionButton {
+	background-color: #ffffff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 20px;
+	text-align: left;
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.2s;
+}
+
+.optionButton:hover {
+	background-color: #f0f0f0;
+}
+
+.optionButton:disabled {
+	cursor: not-allowed;
+	background-color: white;
+}
+
+.optionButton.selected {
+	background-color: #d3d3d3;
+}
+
+.optionImage {
+	max-width: 100%;
+	max-height: 150px;
+	object-fit: cover;
+	border-radius: 8px;
+}
+
+.buttonGroup {
+	margin-top: 20px;
+}
+
+.submitButton,
+.nextButton {
+	background-color: #007bff;
+	border: none;
+	color: white;
+	padding: 10px 20px;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+	margin: 5px;
+	transition: background-color 0.3s;
+}
+
+.submitButton:hover,
+.nextButton:hover {
+	background-color: #0056b3;
+}
