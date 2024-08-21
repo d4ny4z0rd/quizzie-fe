@@ -20,7 +20,7 @@ function App() {
       setIsAuthenticated(!!token);
     };
 
-    window.addEventListener("storage", checkAuth); // Listen for storage changes
+    window.addEventListener("storage", checkAuth);
     return () => window.removeEventListener("storage", checkAuth);
   }, []);
 
