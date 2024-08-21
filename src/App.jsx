@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Login_page from "./pages/Login/Login_page";
 import Signup_page from "./pages/Signup/Signup_page";
 import Dashboard_page from "./pages/Dashboard/Dashboard_page";
@@ -12,7 +12,6 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
     !!localStorage.getItem("accessToken")
   );
-  const navigate = useNavigate();
 
   useEffect(() => {
     const checkAuth = () => {
@@ -23,12 +22,6 @@ function App() {
     window.addEventListener("storage", checkAuth);
     return () => window.removeEventListener("storage", checkAuth);
   }, []);
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      navigate("/dashboard");
-    }
-  }, [isAuthenticated, navigate]);
 
   return (
     <Routes>
