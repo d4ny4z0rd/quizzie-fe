@@ -40,6 +40,7 @@ const Login = () => {
 				localStorage.setItem("refreshToken", response.data.refreshToken);
 				localStorage.setItem("user", JSON.stringify(response.data.user));
 				navigate("/dashboard");
+				window.location.reload();
 			} else {
 				setErrors({ apiError: "Login failed" });
 			}
