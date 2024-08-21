@@ -52,6 +52,7 @@ const Dashboard = () => {
 		localStorage.removeItem("refreshToken");
 		localStorage.removeItem("user");
 		navigate("/login");
+		window.location.reload();
 	};
 
 	const navigateToAnalytics = () => {
