@@ -76,7 +76,7 @@
 
 .submitButton,
 .nextButton {
-	background-color: #007bff;
+	background-color: #50C878;
 	border: none;
 	color: white;
 	padding: 10px 20px;
@@ -89,5 +89,5 @@
 
 .submitButton:hover,
 .nextButton:hover {
-	background-color: #0056b3;
+	background-color: #AFE1AF;
 }
